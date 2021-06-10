@@ -1,8 +1,13 @@
-import { Fragment, useState } from "react"
-import { useWeb3 } from "web3-hooks"
+import { Fragment } from "react"
+import Dapp from "./Dapp"
+import { TokenContextProvider } from "./context/TokenContext"
 
 const App = () => {
-  return <Fragment></Fragment>
+  return (
+    <TokenContextProvider>
+      <Dapp />
+    </TokenContextProvider>
+  )
 }
 
 export default App
