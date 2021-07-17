@@ -1,11 +1,13 @@
-import { Fragment } from "react"
 import Dapp from "./Dapp"
 import { TokenContextProvider } from "./context/TokenContext"
+import { DappContextProvider } from "./context/DappContext"
 
 const App = () => {
   return (
     <TokenContextProvider>
-      <Dapp />
+      <DappContextProvider>
+        <Dapp />
+      </DappContextProvider>
     </TokenContextProvider>
   )
 }

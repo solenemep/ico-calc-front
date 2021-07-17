@@ -1,3 +1,3 @@
-export const TokenAddress = ""
+export const tokenAddress = ""
 
-export const TokenABI = []
+export const tokenABI = []

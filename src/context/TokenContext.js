@@ -1,12 +1,12 @@
 import { createContext } from "react"
-import { TokenAddress, TokenABI } from "../contracts/Token"
+import { useContract } from "web3-hooks"
+import { tokenAddress, tokenABI } from "../contracts/Token"
 
 export const TokenContext = createContext()
 
 export const TokenContextProvider = ({ children }) => {
+  const token = useContract(tokenAddress, tokenABI)
   return (
-    <TokenContext.Provider value={}>
-      {children}
-    </TokenContext.Provider>
+    <TokenContext.Provider value={{ token }}>{children}</TokenContext.Provider>
   )
 }

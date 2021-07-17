@@ -4,11 +4,14 @@ import { Web3Provider } from "web3-hooks"
 import "./index.css"
 import App from "./App"
 import reportWebVitals from "./reportWebVitals"
+import { ChakraProvider } from "@chakra-ui/react"
 
 ReactDOM.render(
   <React.StrictMode>
     <Web3Provider>
-      <App />
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
     </Web3Provider>
   </React.StrictMode>,
   document.getElementById("root")

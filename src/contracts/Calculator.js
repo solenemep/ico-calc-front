@@ -1,3 +1,3 @@
-export const CalculatorAddress = ""
+export const calculatorAddress = ""
 
-export const CalculatorABI = []
+export const calculatorABI = []
