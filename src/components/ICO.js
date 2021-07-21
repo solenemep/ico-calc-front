@@ -1,4 +1,4 @@
 const ICO = () => {
-  return
+  return <></>
 }
 export default ICO

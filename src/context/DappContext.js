@@ -14,9 +14,11 @@ export const DappContextProvider = ({ children }) => {
   const bgContent = useColorModeValue("cyan.50", "gray.800")
   const colorScheme = "cyan"
 
+  const bgCalc = useColorModeValue("gray.100", "gray.700")
+
   return (
     <DappContext.Provider
-      value={{ bgNavFoot, hoverNavFoot, bgContent, colorScheme }}
+      value={{ bgNavFoot, hoverNavFoot, bgContent, colorScheme, bgCalc }}
     >
       {children}
     </DappContext.Provider>

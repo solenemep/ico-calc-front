@@ -66,25 +66,25 @@ const Nav = () => {
             <Fragment>
               <Link
                 style={{ fontWeight: "bold" }}
-                href={"/wallet"}
-                aria-label={"wallet page"}
+                href={"/ico"}
+                aria-label={"ico page"}
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={hoverNavFoot}
               >
-                Wallet
+                ICO
               </Link>
               <Link
                 style={{ fontWeight: "bold" }}
-                href={"/faucet"}
-                aria-label={"faucet page"}
+                href={"/calculator"}
+                aria-label={"calculator page"}
                 px={2}
                 py={1}
                 rounded={"md"}
                 _hover={hoverNavFoot}
               >
-                Faucet
+                Calculator
               </Link>
             </Fragment>
           ) : (
@@ -93,7 +93,7 @@ const Nav = () => {
         </HStack>
         <HStack spacing={4}>
           <Button
-            colorScheme={colorScheme}
+            bgColor="gray.400"
             px={2}
             py={1}
             mx={4}
@@ -101,7 +101,6 @@ const Nav = () => {
             type="button"
             aria-label="Log"
             onClick={web3State.isLogged ? onOpen : login}
-            _hover={hoverNavFoot}
           >
             {web3State.isLogged ? "Log out" : "Log in"}
           </Button>

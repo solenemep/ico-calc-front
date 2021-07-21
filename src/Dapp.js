@@ -19,7 +19,7 @@ const Dapp = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/calculator">
+          <Route exact path="/ico">
             <ICOContextProvider>
               <ICO />
             </ICOContextProvider>

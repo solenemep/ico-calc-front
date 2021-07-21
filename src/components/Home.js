@@ -24,7 +24,8 @@ const Home = () => {
         as={"small"}
         style={{ textTransform: "uppercase" }}
       >
-        This dapp ...
+        This dapp allows you to get Token TKN from ICO and then pay to make
+        calculs on the calculator.
       </Text>
 
       {web3State.isLogged ? (
