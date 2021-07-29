@@ -8,6 +8,7 @@ import Footer from "./components/Footer"
 import { useDappContext } from "./hook/useDappContext"
 import { ICOContextProvider } from "./context/ICOContext"
 import { CalculatorContextProvider } from "./context/CalculatorContext"
+import Wallet from "./components/Wallet"
 
 const Dapp = () => {
   const { bgContent } = useDappContext()
@@ -23,6 +24,9 @@ const Dapp = () => {
             <ICOContextProvider>
               <ICO />
             </ICOContextProvider>
+          </Route>
+          <Route exact path="/wallet">
+            <Wallet />
           </Route>
           <Route exact path="/calculator">
             <CalculatorContextProvider>

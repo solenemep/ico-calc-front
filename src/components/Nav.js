@@ -77,6 +77,17 @@ const Nav = () => {
               </Link>
               <Link
                 style={{ fontWeight: "bold" }}
+                href={"/wallet"}
+                aria-label={"wallet page"}
+                px={2}
+                py={1}
+                rounded={"md"}
+                _hover={hoverNavFoot}
+              >
+                Wallet
+              </Link>
+              <Link
+                style={{ fontWeight: "bold" }}
                 href={"/calculator"}
                 aria-label={"calculator page"}
                 px={2}
@@ -93,7 +104,6 @@ const Nav = () => {
         </HStack>
         <HStack spacing={4}>
           <Button
-            bgColor="gray.400"
             px={2}
             py={1}
             mx={4}

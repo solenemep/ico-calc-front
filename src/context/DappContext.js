@@ -8,7 +8,7 @@ export const DappContextProvider = ({ children }) => {
   const hoverNavFoot = {
     textDecoration: "none",
     color: "inherit",
-    bg: useColorModeValue("cyan.200", "gray.800"),
+    backgroungColor: "inherit",
   }
 
   const bgContent = useColorModeValue("cyan.50", "gray.800")

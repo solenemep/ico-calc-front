@@ -8,6 +8,7 @@ import {
   Text,
   VStack,
   Link,
+  useToast,
 } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { useWeb3 } from "web3-hooks"
@@ -17,12 +18,13 @@ import { useDappContext } from "../hook/useDappContext"
 const Calculator = () => {
   const [web3State] = useWeb3()
   const calculator = useCalculatorContext()
-  const { bgCalc, hoverNavFoot, bgNavFoot } = useDappContext()
+  const { bgCalc, hoverNavFoot } = useDappContext()
   const [expression, setExpression] = useState("")
   const [nb1, setNb1] = useState(0)
   const [nb2, setNb2] = useState(0)
   const [op, setOp] = useState("")
   const [result, setResult] = useState(0)
+  const toast = useToast()
 
   useEffect(() => {
     const tab1 = expression.split("")
@@ -43,7 +45,16 @@ const Calculator = () => {
           const res = await calculator.add(nb1, nb2)
           setResult(res.toString())
         } catch (e) {
-          console.log(e)
+          if (e.code === 4001) {
+            toast({
+              title: "Transaction signature denied",
+              description: e.message,
+              variant: "subtle",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            })
+          }
         }
         break
       case "-":
@@ -51,7 +62,16 @@ const Calculator = () => {
           const res = await calculator.sub(nb1, nb2)
           setResult(res.toString())
         } catch (e) {
-          console.log(e)
+          if (e.code === 4001) {
+            toast({
+              title: "Transaction signature denied",
+              description: e.message,
+              variant: "subtle",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            })
+          }
         }
         break
       case "x":
@@ -59,7 +79,16 @@ const Calculator = () => {
           const res = await calculator.mul(nb1, nb2)
           setResult(res.toString())
         } catch (e) {
-          console.log(e)
+          if (e.code === 4001) {
+            toast({
+              title: "Transaction signature denied",
+              description: e.message,
+              variant: "subtle",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            })
+          }
         }
         break
       case "÷":
@@ -71,7 +100,16 @@ const Calculator = () => {
             setResult(res.toString())
           }
         } catch (e) {
-          console.log(e)
+          if (e.code === 4001) {
+            toast({
+              title: "Transaction signature denied",
+              description: e.message,
+              variant: "subtle",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            })
+          }
         }
         break
       case "%":
@@ -79,7 +117,16 @@ const Calculator = () => {
           const res = await calculator.mod(nb1, nb2)
           setResult(res.toString())
         } catch (e) {
-          console.log(e)
+          if (e.code === 4001) {
+            toast({
+              title: "Transaction signature denied",
+              description: e.message,
+              variant: "subtle",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            })
+          }
         }
         break
       default:
@@ -122,6 +169,7 @@ const Calculator = () => {
           >
             <GridItem
               bgColor="white"
+              color="black"
               rounded="lg"
               rowSpan={1}
               colSpan={3}
@@ -135,6 +183,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem
               bgColor="white"
+              color="black"
               rounded="lg"
               rowSpan={1}
               colSpan={3}
@@ -144,6 +193,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -156,6 +206,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -168,6 +219,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -180,6 +232,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -193,6 +246,7 @@ const Calculator = () => {
 
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 height="100%"
                 width="100%"
                 bgColor="gray.300"
@@ -205,6 +259,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 height="100%"
                 width="100%"
                 bgColor="gray.300"
@@ -217,6 +272,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={2} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -229,6 +285,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -241,6 +298,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -253,6 +311,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -265,6 +324,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 height="100%"
                 width="100%"
                 bgColor="gray.300"
@@ -277,6 +337,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 height="100%"
                 width="100%"
                 bgColor="gray.300"
@@ -289,6 +350,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -301,6 +363,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -313,6 +376,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 bg={bgCalc}
                 height="100%"
                 width="100%"
@@ -325,6 +389,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 height="100%"
                 width="100%"
                 bgColor="gray.300"
@@ -337,6 +402,7 @@ const Calculator = () => {
             </GridItem>
             <GridItem rowSpan={1} colSpan={1}>
               <Button
+                _hover={hoverNavFoot}
                 height="100%"
                 width="100%"
                 bgColor="gray.400"
@@ -360,7 +426,6 @@ const Calculator = () => {
             py={2}
             rounded={"md"}
             _hover={hoverNavFoot}
-            bg={bgNavFoot}
           >
             Back Home to check connection
           </Link>
