@@ -1,4 +1,4 @@
-export const ICOAddress = "0xfBf55D45A3BB085d8a64e0e75F13878D0bf35E5A"
+export const ICOAddress = "0xd85e9f469953e3aBe37227E2505520817bBA5529"
 
 export const ICOABI = [
   {

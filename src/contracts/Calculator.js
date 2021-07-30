@@ -1,4 +1,4 @@
-export const calculatorAddress = "0x6401096A457669cd20232bc0B2C31a141f878A73"
+export const calculatorAddress = "0x534e11bBf52FB48C1C205939507413C0e38FaF68"
 
 export const calculatorABI = [
   {
@@ -30,12 +30,6 @@ export const calculatorABI = [
         indexed: false,
         internalType: "int256",
         name: "b",
-        type: "int256",
-      },
-      {
-        indexed: false,
-        internalType: "int256",
-        name: "result",
         type: "int256",
       },
     ],
@@ -76,12 +70,6 @@ export const calculatorABI = [
         name: "b",
         type: "int256",
       },
-      {
-        indexed: false,
-        internalType: "int256",
-        name: "result",
-        type: "int256",
-      },
     ],
     name: "Divided",
     type: "event",
@@ -101,12 +89,6 @@ export const calculatorABI = [
         name: "b",
         type: "int256",
       },
-      {
-        indexed: false,
-        internalType: "int256",
-        name: "result",
-        type: "int256",
-      },
     ],
     name: "Modulated",
     type: "event",
@@ -124,12 +106,6 @@ export const calculatorABI = [
         indexed: false,
         internalType: "int256",
         name: "b",
-        type: "int256",
-      },
-      {
-        indexed: false,
-        internalType: "int256",
-        name: "result",
         type: "int256",
       },
     ],
@@ -168,12 +144,6 @@ export const calculatorABI = [
         indexed: false,
         internalType: "int256",
         name: "b",
-        type: "int256",
-      },
-      {
-        indexed: false,
-        internalType: "int256",
-        name: "result",
         type: "int256",
       },
     ],

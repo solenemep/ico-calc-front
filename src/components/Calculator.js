@@ -17,13 +17,13 @@ import { useDappContext } from "../hook/useDappContext"
 
 const Calculator = () => {
   const [web3State] = useWeb3()
-  const calculator = useCalculatorContext()
+  const { calculator } = useCalculatorContext()
   const { bgCalc, hoverNavFoot } = useDappContext()
   const [expression, setExpression] = useState("")
   const [nb1, setNb1] = useState(0)
   const [nb2, setNb2] = useState(0)
   const [op, setOp] = useState("")
-  const [result, setResult] = useState(0)
+  const [result, setResult] = useState("")
   const toast = useToast()
 
   useEffect(() => {
@@ -45,6 +45,7 @@ const Calculator = () => {
           const res = await calculator.add(nb1, nb2)
           setResult(res.toString())
         } catch (e) {
+          console.log(e)
           if (e.code === 4001) {
             toast({
               title: "Transaction signature denied",

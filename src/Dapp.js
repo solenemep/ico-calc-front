@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Calculator from "./components/Calculator"
 import ICO from "./components/ICO"
 import Nav from "./components/Nav"
+import Wallet from "./components/Wallet"
 import Home from "./components/Home"
 import Footer from "./components/Footer"
 import { useDappContext } from "./hook/useDappContext"
 import { ICOContextProvider } from "./context/ICOContext"
 import { CalculatorContextProvider } from "./context/CalculatorContext"
-import Wallet from "./components/Wallet"
 
 const Dapp = () => {
   const { bgContent } = useDappContext()

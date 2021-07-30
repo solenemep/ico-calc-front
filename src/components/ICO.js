@@ -90,11 +90,20 @@ const ICO = () => {
         isClosable: true,
       })
     } catch (e) {
-      console.log(e)
       if (e.code === 4001) {
         toast({
           title: "Transaction signature denied",
           description: e.message,
+          variant: "subtle",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        })
+      } else if (e.code === -32016) {
+        toast({
+          title: "Transaction reverted",
+          description:
+            "Reasons transaction can be reverted : you are owner / sales is off / value is null / reserve has not not engought",
           variant: "subtle",
           status: "error",
           duration: 9000,
@@ -136,6 +145,16 @@ const ICO = () => {
         toast({
           title: "Transaction signature denied",
           description: e.message,
+          variant: "subtle",
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        })
+      } else if (e.code === -32016) {
+        toast({
+          title: "Transaction reverted",
+          description:
+            "Reasons transaction can be reverted : you are not owner / sales is on / balance is null",
           variant: "subtle",
           status: "error",
           duration: 9000,
